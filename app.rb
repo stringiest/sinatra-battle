@@ -18,7 +18,14 @@ get '/tea' do
   "earl grey"
 end
 
-get '/cat' do
+get '/random-cat' do
   @name = ["Oscar", "Amigo", "Viking"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  @color = params[:color]
   erb(:index)
 end
